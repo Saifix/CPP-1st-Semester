@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+int main()
+
+{
+		int x, y;
+		int *p, *q;
+		x = 2;
+		y = 8;
+		p = &x;
+		q = &y;
+		cout << "The address of x is " << &x << " and the value of x is " << x << endl;
+		cout << "The value of p is " << p << " and the value of *p is " << *p << endl;
+		cout << "The address of y is " << &y << " and the value of y is " << y << endl;
+		cout << "The value of q is " << q << " and the value of *q " << *q << endl;
+		system("pause");
+}

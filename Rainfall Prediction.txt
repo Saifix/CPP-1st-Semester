@@ -1,0 +1,59 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+int main ()
+{
+const int months = 12;
+string name[months]= {"January","February","March","April","May","June","July","August","September","October","November","December"};
+int count= 0;
+double rain[months];
+double avg,year=0,highest,lowest;
+string highMonth;
+string lowMonth;
+for(count = 0; count < months; count++) // ask user to enter amount of rainfall for each month
+{
+cout <<"How many inches of rain does "<< name[count];
+cout<< " have? \n";
+cin >> rain[count];
+while (rain[count] < 0)
+{
+cout << "Please enter a number greater than 0."<< endl;
+cin >> rain[count];
+}
+}
+for(int count=0; count<months; count++) // totals up all the rainfall
+year += rain[count];
+avg = year / months;
+for( int count = 0; count < months; count++) //spits out each month with its amount of rain
+{
+cout << name[count];
+cout<< " has ";
+cout<< rain[count] << " inches of rainfall.\n";
+}
+highest = rain[0]; // finds month with the highest amount of rain
+for (count = 1 ;count < months; count++)
+{
+if (rain[count] > highest)
+{
+highMonth = name[count];
+highest = rain[count];
+}
+}
+lowest = rain[0]; // finds month with the least amount of rain
+for (count = 1 ;count < months; count++)
+{
+if (rain[count] < lowest)
+{
+lowMonth = name[count];
+lowest = rain[count];
+}
+}
+cout << endl;
+cout << setprecision(2) << fixed;
+cout <<"Total Rainfall throughout the year is " <<year << " inches" << endl;
+cout <<"The average monthly rainfall is " << avg << " inches"<< endl;
+cout <<"The month with the highest amount of rainfall is " << highMonth << " with " << highest<< " inches."<< endl;
+cout <<"The month with the lowest amount of rainfall is " << lowMonth << " with " << lowest<< " inches."<< endl;
+return 0;
+}

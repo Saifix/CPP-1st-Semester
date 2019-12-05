@@ -1,0 +1,24 @@
+//Question: 2 Write a C++ program which has a printdate (int, int, int) function.
+// Get month, day & year from user in main ( ). Call the function printDate(int, int, int),
+// Put a check in printDate() using if statement (month < 1 || month > 12 || day < 1 || day > 31 || year < 0) 
+//& if it violates the rule display ?Must Enter a Valid Date, otherwise display the date in this format (dd,mm,yyyy)
+#include<iostream>
+using namespace std;
+void printDate(int x, int y, int z)
+{
+	if(y < 1 || x > 12 || x < 1 || x > 31 || z < 0)
+	{
+		cout<<"Must Enter a Valid Date\n";
+	}
+	else
+	{
+		cout<<x<<"-"<<y<<"-"<<z<<endl;
+	}
+}
+int main(int x, int y, int z)
+{
+	cout<<"Please enter the date : ";
+	cin>>x>>y>>z;
+	printDate( x, y, z);
+	system("pause");
+}
